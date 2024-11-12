@@ -83,8 +83,8 @@ const InstructorDashboard = () => {
                     selectedDateIndex === index
                       ? "bg-[#0B0B2D] text-white"
                       : date.available
-                      ? "border-[#0B0B2D] text-[#0B0B2D] border-2 shadow-lg shadow-blue-200"
-                      : "border-gray-300 text-[#0B0B2D] cursor-not-allowed"
+                      ? "border-[#0B0B2D] text-[#0B0B2D] border-2 shadow-lg shadow-blue-200 hover:scale-125"
+                      : "border-gray-300 text-gray-500 cursor-not-allowed"
                   }`}
                   onClick={() => date.available && setSelectedDateIndex(index)}
                   disabled={!date.available} // Disable if unavailable
@@ -113,11 +113,11 @@ const InstructorDashboard = () => {
               {timeSlots.map((slot) => (
                 <button
                   key={slot.time}
-                  className={`px-4 py-2 border-2 rounded-lg font-semibold ${
+                  className={`px-4 py-2 border-2 rounded-lg font-semibold  ${
                     selectedTime === slot.time
                       ? "bg-[#0B0B2D] text-white"
                       : slot.available
-                      ? "border-[#0B0B2D] text-[#0B0B2D]"
+                      ? "border-[#0B0B2D] text-[#0B0B2D] hover:scale-125    "
                       : "border-gray-300 text-gray-300 cursor-not-allowed"
                   }`}
                   onClick={() => slot.available && setSelectedTime(slot.time)}
@@ -135,7 +135,7 @@ const InstructorDashboard = () => {
               Proceed
             </button>
           </div>
-  
+          
           {/* Upcoming Sessions Section */}
           <h3 className="text-xl font-semibold mb-4">Upcoming Sessions:</h3>
           <div className="space-y-4 mb-8">
@@ -157,7 +157,8 @@ const InstructorDashboard = () => {
                 </div>
               </div>
             ))}
-          </div>
+            </div>
+          
   
           {/* Previous Sessions Section */}
           <h3 className="text-xl font-semibold mb-4">Previous Booked Sessions:</h3>
